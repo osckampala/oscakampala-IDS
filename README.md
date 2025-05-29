@@ -19,21 +19,27 @@ With a clean dashboard, customizable rules, and modular code, it’s built for *
 ## 📂 Project Layout
 
 OscaKampala_IDS/
+│
 ├── core/
-│ ├── capture.py # Network packet capture logic
-│ ├── rules.py # Load & match detection rules
-│ ├── logger.py # Alert logging functions
+│   ├── capture.py         # Network packet capture logic
+│   ├── rules.py           # Load & match detection rules
+│   └── logger.py          # Alert logging functions
+│
 ├── config/
-│ └── rules.yaml # Your detection signatures here
+│   └── rules.yaml         # Your detection signatures here
+│
 ├── dashboard/
-│ ├── app.py # Flask dashboard app
-│ └── templates/
-│ └── index.html # Dashboard frontend UI
+│   ├── app.py             # Flask dashboard app
+│   └── templates/
+│       └── index.html     # Dashboard frontend UI
+│
 ├── logs/
-│ └── alerts.log # Generated alert logs
-├── main.py # IDS main program
-├── requirements.txt # Dependencies
-└── README.md # You are here 😉
+│   └── alerts.log         # Generated alert logs
+│
+├── main.py                # IDS main program
+├── requirements.txt       # Dependencies
+└── README.md              # You are here 😉
+
 
 
 ---
@@ -91,9 +97,9 @@ We love contributions! Here’s how you can help:
 
     Fork & create a branch:
 
-    ```bash
+---
     git checkout -b feature/awesome-feature
-    ```
+    
     Write clean, well-documented code.
 
     Test your changes thoroughly.
