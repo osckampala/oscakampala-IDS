@@ -91,8 +91,9 @@ We love contributions! Here’s how you can help:
 
     Fork & create a branch:
 
+    ```bash
     git checkout -b feature/awesome-feature
-
+    ```
     Write clean, well-documented code.
 
     Test your changes thoroughly.
