@@ -112,7 +112,7 @@ This project is licensed under the MIT License © OscaKampala.
 📬 Contact Us
 
 Questions? Suggestions? Reach out:
-✉️ support@oscakampala.org
+✉️ oscakampala.org
 🌐 GitHub Profile
 
 Thanks for checking out OscaKampala IDS!
@@ -121,16 +121,3 @@ Let’s secure networks — one packet at a time! 🚀🔒
 
 ---
 
-This README is:  
-- Friendly and easy to read  
-- Uses relevant emojis to guide attention  
-- Clean section breaks and spacing  
-- Quick to skim but informative enough  
-- Encourages contributions and community vibe  
-
----
-
-If you want me to save this README in your project or zip it up for you, just say so!
-
-
-ChatGPT can make mistakes. Check important info.
