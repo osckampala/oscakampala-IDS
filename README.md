@@ -3,18 +3,18 @@ Sure! Here’s an **awesome, professional README** tailored for your OscaKampala
 ---
 
 ```markdown
-# OscaKampala IDS
+OscaKampala IDS
 
 **OscaKampala IDS** is a real-world, modular, and extensible Python-based Intrusion Detection System designed to help network defenders detect suspicious traffic and potential attacks in real time. It comes with a live web dashboard to visualize alerts and is built to be easy to understand, extend, and contribute to.
 
 ---
 
-## Features
+ Features
 
-- **Real-time network packet capture and analysis**  
-- **Rule-based detection engine** powered by customizable YAML signature files  
-- **Logging and alerting** with detailed info for each detection  
-- **Live Flask-based dashboard** to monitor alerts in real time via a browser  
+- Real-time network packet capture and analysis**  
+- Rule-based detection engine** powered by customizable YAML signature files  
+- Logging and alerting** with detailed info for each detection  
+- Live Flask-based dashboard** to monitor alerts in real time via a browser  
 - Modular codebase for easy extension and contribution  
 - Clear logging system and configuration separation  
 - Designed for easy setup and deployment on Linux and Windows
@@ -147,7 +147,3 @@ Thank you for using OscaKampala IDS — helping secure networks, one packet at a
 
 ```
 
----
-
-If you want, I can also update the README in your project files or generate a zipped package including this updated README. Just say!
-```
