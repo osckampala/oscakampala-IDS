@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OscaKampala IDS Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f2f2f2; }
+        h1 { color: #333; }
+        #logContainer { background: #fff; padding: 10px; border: 1px solid #ccc; height: 400px; overflow-y: scroll; }
+    </style>
+</head>
+<body>
+    <h1>OscaKampala IDS Dashboard</h1>
+    <div id="logContainer"></div>
+
+    <script>
+        function fetchLogs() {
+            fetch('/logs')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('logContainer');
+                    container.innerHTML = '';
+                    data.forEach(line => {
+                        const p = document.createElement('p');
+                        p.textContent = line;
+                        container.appendChild(p);
+                    });
+                });
+        }
+
+        setInterval(fetchLogs, 3000);
+        fetchLogs();
+    </script>
+</body>
+</html>
+<script>
+    // This script fetches logs every 3 seconds and updates the log container
+    function fetchLogs() {
+        fetch('/logs')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('logContainer');
+                container.innerHTML = '';
+                data.forEach(line => {
+                    const p = document.createElement('p');
+                    p.textContent = line;
+                    container.appendChild(p);
+                });
+            });
+    }
+
+    setInterval(fetchLogs, 3000);
+    fetchLogs();
