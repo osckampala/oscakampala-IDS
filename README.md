@@ -18,7 +18,7 @@ With a clean dashboard, customizable rules, and modular code, it’s built for *
 
 ## 📂 Project Layout
 
-<pre> OscaKampala_IDS/
+<pre> OscaKampala-IDS/
 │
 ├── core/
 │   ├── capture.py         # Network packet capture logic
@@ -48,10 +48,10 @@ With a clean dashboard, customizable rules, and modular code, it’s built for *
 
 ### Prerequisites
 
-- Python 3.8+  
+- `Python 3.8+`  
 - `pip`  
-- Root/admin privileges for packet sniffing  
-- Linux or Windows (with WinPcap/Npcap)
+- `Root/admin privileges for packet sniffing`  
+- `Linux or Windows (with WinPcap/Npcap)`
 
 ---
 
@@ -60,8 +60,8 @@ With a clean dashboard, customizable rules, and modular code, it’s built for *
 1. **Clone this repo**
 
     ```bash
-    git clone https://github.com/oscakampala/OscaKampala_IDS.git
-    cd OscaKampala_IDS
+    git clone https://github.com/osckampala/oscakampala-IDS.git
+    cd OscaKampala-IDS
     ```
 
 2. **Install dependencies**
@@ -120,4 +120,7 @@ Let’s secure networks — one packet at a time! 🚀🔒
 
 
 ---
+## 🖼️ Screenshot
+
+![OscaKampala IDS Dashboard](dashboard/static/screenshot.png)
 
