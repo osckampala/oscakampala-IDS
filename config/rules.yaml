@@ -1,0 +1,7 @@
+- protocol: TCP
+  signature: "GET /admin"
+  alert: "Unauthorized admin access"
+
+- protocol: UDP
+  signature: "dns tunneling"
+  alert: "Possible DNS tunneling detected"
