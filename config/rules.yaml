@@ -1,7 +1,345 @@
+# OscaKampala IDS Detection Rules - Extensive Rule Set
+
 - protocol: TCP
   signature: "GET /admin"
-  alert: "Unauthorized admin access"
+  alert: "Unauthorized admin panel access attempt"
+
+- protocol: TCP
+  signature: "POST /login"
+  alert: "Suspicious login POST request"
+
+- protocol: TCP
+  signature: "cmd.exe"
+  alert: "Windows command execution attempt"
+
+- protocol: TCP
+  signature: "powershell"
+  alert: "Potential PowerShell command execution"
+
+- protocol: TCP
+  signature: "wget http"
+  alert: "Malicious file download attempt"
+
+- protocol: TCP
+  signature: "curl http"
+  alert: "Potential malicious curl download"
+
+- protocol: TCP
+  signature: "union select"
+  alert: "SQL Injection attempt"
+
+- protocol: TCP
+  signature: "drop table"
+  alert: "SQL Injection with DROP TABLE detected"
+
+- protocol: TCP
+  signature: "/etc/passwd"
+  alert: "Unix password file access attempt"
+
+- protocol: TCP
+  signature: "base64_decode"
+  alert: "Possible PHP code obfuscation detected"
+
+- protocol: TCP
+  signature: "eval("
+  alert: "Possible code injection attempt"
+
+- protocol: TCP
+  signature: "phpmyadmin"
+  alert: "phpMyAdmin access attempt"
+
+- protocol: TCP
+  signature: "User-Agent: sqlmap"
+  alert: "Automated SQL injection tool detected"
+
+- protocol: TCP
+  signature: "union all select"
+  alert: "Advanced SQL Injection pattern detected"
+
+- protocol: TCP
+  signature: "admin.php"
+  alert: "Admin panel access detected"
+
+- protocol: TCP
+  signature: "select * from"
+  alert: "SQL query pattern detected"
+
+- protocol: TCP
+  signature: "Authorization: Basic"
+  alert: "Basic Authentication credentials sent"
 
 - protocol: UDP
   signature: "dns tunneling"
-  alert: "Possible DNS tunneling detected"
+  alert: "Possible DNS tunneling activity"
+
+- protocol: UDP
+  signature: "ntp monlist"
+  alert: "NTP amplification attack attempt"
+
+- protocol: UDP
+  signature: "covert channel"
+  alert: "Potential covert UDP channel detected"
+
+- protocol: ICMP
+  signature: "ping"
+  alert: "ICMP ping detected"
+
+- protocol: TCP
+  signature: "root:"
+  alert: "Attempt to access root user info"
+
+- protocol: TCP
+  signature: "passwd"
+  alert: "Password file access attempt"
+
+- protocol: TCP
+  signature: "/bin/sh"
+  alert: "Shell access attempt detected"
+
+- protocol: TCP
+  signature: "etc/shadow"
+  alert: "Shadow password file access attempt"
+
+- protocol: TCP
+  signature: "127.0.0.1"
+  alert: "Localhost access attempt"
+
+- protocol: TCP
+  signature: "POST /upload"
+  alert: "File upload endpoint accessed"
+
+- protocol: TCP
+  signature: "base64,"
+  alert: "Base64 encoded payload detected"
+
+- protocol: TCP
+  signature: "eval(base64_decode"
+  alert: "Encoded PHP eval detected"
+
+- protocol: TCP
+  signature: "<script>"
+  alert: "Possible Cross-site Scripting (XSS) attack"
+
+- protocol: TCP
+  signature: "onerror="
+  alert: "XSS attack vector detected"
+
+- protocol: TCP
+  signature: "union select"
+  alert: "SQL injection detected"
+
+- protocol: TCP
+  signature: "xp_cmdshell"
+  alert: "SQL Server command shell execution attempt"
+
+- protocol: TCP
+  signature: "load_file("
+  alert: "Attempt to read local files via SQL"
+
+- protocol: TCP
+  signature: "information_schema"
+  alert: "Information schema access attempt"
+
+- protocol: TCP
+  signature: "benchmark("
+  alert: "SQL injection benchmark function detected"
+
+- protocol: TCP
+  signature: "sleep("
+  alert: "SQL injection time delay attack"
+
+- protocol: TCP
+  signature: "union/**/select"
+  alert: "SQL injection with comment bypass"
+
+- protocol: TCP
+  signature: "select/**/from"
+  alert: "SQL injection with comment bypass"
+
+- protocol: TCP
+  signature: "updatexml("
+  alert: "SQL injection XML attack"
+
+- protocol: TCP
+  signature: "extractvalue("
+  alert: "SQL injection XML attack"
+
+- protocol: TCP
+  signature: "outfile"
+  alert: "Attempt to write file via SQL"
+
+- protocol: TCP
+  signature: "phpinfo("
+  alert: "PHP info function call detected"
+
+- protocol: TCP
+  signature: "passthru("
+  alert: "Command execution attempt"
+
+- protocol: TCP
+  signature: "shell_exec("
+  alert: "Shell execution detected"
+
+- protocol: TCP
+  signature: "system("
+  alert: "System command execution detected"
+
+- protocol: TCP
+  signature: "proc_open("
+  alert: "Process open function call detected"
+
+- protocol: TCP
+  signature: "popen("
+  alert: "Process open function call detected"
+
+- protocol: TCP
+  signature: "exec("
+  alert: "Code execution function call detected"
+
+- protocol: TCP
+  signature: "base64_encode"
+  alert: "Base64 encoding detected"
+
+- protocol: TCP
+  signature: "eval(gzinflate("
+  alert: "PHP code obfuscation detected"
+
+- protocol: TCP
+  signature: "eval(str_rot13("
+  alert: "PHP code obfuscation detected"
+
+- protocol: TCP
+  signature: "POST /wp-login.php"
+  alert: "WordPress login attempt detected"
+
+- protocol: TCP
+  signature: "POST /xmlrpc.php"
+  alert: "WordPress XML-RPC endpoint accessed"
+
+- protocol: TCP
+  signature: "User-Agent: nikto"
+  alert: "Nikto scanner detected"
+
+- protocol: TCP
+  signature: "User-Agent: nmap"
+  alert: "Nmap scanner detected"
+
+- protocol: TCP
+  signature: "User-Agent: nessus"
+  alert: "Nessus vulnerability scanner detected"
+
+- protocol: TCP
+  signature: "User-Agent: dirbuster"
+  alert: "DirBuster tool detected"
+
+- protocol: TCP
+  signature: "User-Agent: sqlmap"
+  alert: "SQLmap SQL injection tool detected"
+
+- protocol: TCP
+  signature: "User-Agent: fuzzer"
+  alert: "Generic fuzzing tool detected"
+
+- protocol: TCP
+  signature: "User-Agent: hydra"
+  alert: "Hydra brute-force tool detected"
+
+- protocol: TCP
+  signature: "X-Forwarded-For: 127.0.0.1"
+  alert: "Possible IP spoofing detected"
+
+- protocol: TCP
+  signature: "X-Forwarded-For: localhost"
+  alert: "Possible IP spoofing detected"
+
+- protocol: TCP
+  signature: "select count(*)"
+  alert: "SQL query pattern detected"
+
+- protocol: TCP
+  signature: "select version()"
+  alert: "Database version query detected"
+
+- protocol: TCP
+  signature: "show tables"
+  alert: "Database tables enumeration detected"
+
+- protocol: TCP
+  signature: "information_schema.tables"
+  alert: "Information schema access detected"
+
+- protocol: TCP
+  signature: "convert(int,"
+  alert: "SQL type conversion detected"
+
+- protocol: TCP
+  signature: "benchmark('a',"
+  alert: "SQL benchmark function detected"
+
+- protocol: TCP
+  signature: "char("
+  alert: "SQL char function detected"
+
+- protocol: TCP
+  signature: "hex("
+  alert: "SQL hex function detected"
+
+- protocol: TCP
+  signature: "concat("
+  alert: "SQL concat function detected"
+
+- protocol: TCP
+  signature: "alert(document.cookie)"
+  alert: "XSS alert cookie attempt"
+
+- protocol: TCP
+  signature: "onload="
+  alert: "XSS onload event detected"
+
+- protocol: TCP
+  signature: "javascript:"
+  alert: "JavaScript URI detected"
+
+- protocol: TCP
+  signature: "document.location"
+  alert: "XSS document.location detected"
+
+- protocol: TCP
+  signature: "document.cookie"
+  alert: "XSS document.cookie detected"
+
+- protocol: TCP
+  signature: "<iframe"
+  alert: "Potential clickjacking iframe detected"
+
+- protocol: TCP
+  signature: "<object"
+  alert: "Potential embedded object detected"
+
+- protocol: TCP
+  signature: "<embed"
+  alert: "Potential embedded media detected"
+
+- protocol: TCP
+  signature: "base64_decode("
+  alert: "PHP base64 decoding detected"
+
+- protocol: TCP
+  signature: "passthru("
+  alert: "System passthru command detected"
+
+- protocol: TCP
+  signature: "shell_exec("
+  alert: "Shell exec command detected"
+
+- protocol: TCP
+  signature: "system("
+  alert: "System command detected"
+
+- protocol: TCP
+  signature: "proc_open("
+  alert: "Process open detected"
+
+- protocol: TCP
+  signature: "popen("
+  alert: "Process popen detected"

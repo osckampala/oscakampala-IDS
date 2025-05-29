@@ -1,52 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>OscaKampala IDS Dashboard</title>
-    <style>
-        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f2f2f2; }
-        h1 { color: #333; }
-        #logContainer { background: #fff; padding: 10px; border: 1px solid #ccc; height: 400px; overflow-y: scroll; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OscaKampala IDS Dashboard</title>
+  <style>
+    /* Reset & base */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #1a73e8;
+      margin-bottom: 30px;
+    }
+
+    /* Alert List container */
+    .alert-list {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Alert item base */
+    .alert-item {
+      background: #fff;
+      border-left: 8px solid gray;
+      margin-bottom: 15px;
+      padding: 18px 25px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      word-wrap: break-word;
+      transition: border-color 0.3s ease;
+    }
+
+    /* Severity colors */
+    .alert-critical { border-color: #d32f2f; }  /* Red */
+    .alert-high { border-color: #f57c00; }      /* Orange Dark */
+    .alert-medium { border-color: #fbc02d; }    /* Yellow */
+    .alert-low { border-color: #388e3c; }       /* Green */
+    .alert-info { border-color: #1976d2; }      /* Blue */
+
+    /* Alert level text styling */
+    .alert-level {
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-right: 10px;
+      font-size: 0.9em;
+    }
+
+    /* Message text */
+    .alert-message {
+      font-size: 1.1em;
+      display: inline-block;
+      vertical-align: middle;
+      color: #444;
+    }
+
+    /* No alerts message */
+    .no-alerts {
+      text-align: center;
+      color: #777;
+      font-style: italic;
+      margin-top: 40px;
+      font-size: 1.2em;
+    }
+  </style>
 </head>
 <body>
-    <h1>OscaKampala IDS Dashboard</h1>
-    <div id="logContainer"></div>
 
-    <script>
-        function fetchLogs() {
-            fetch('/logs')
-                .then(response => response.json())
-                .then(data => {
-                    const container = document.getElementById('logContainer');
-                    container.innerHTML = '';
-                    data.forEach(line => {
-                        const p = document.createElement('p');
-                        p.textContent = line;
-                        container.appendChild(p);
-                    });
-                });
-        }
+  <h1>🛡️ OscaKampala IDS Dashboard</h1>
 
-        setInterval(fetchLogs, 3000);
-        fetchLogs();
-    </script>
+  <div class="alert-list" id="alertList">
+    {% if alerts %}
+      {% for alert in alerts %}
+        <div class="alert-item
+          {% if alert.level == 'CRITICAL' %}alert-critical
+          {% elif alert.level == 'HIGH' %}alert-high
+          {% elif alert.level == 'MEDIUM' %}alert-medium
+          {% elif alert.level == 'LOW' %}alert-low
+          {% elif alert.level == 'INFO' %}alert-info
+          {% else %}alert-info
+          {% endif %}
+        ">
+          <span class="alert-level">{{ alert.level }}</span>
+          <span class="alert-message">{{ alert.message }}</span>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p class="no-alerts">🎉 No alerts found — your network is safe!</p>
+    {% endif %}
+  </div>
+
 </body>
 </html>
 <script>
-    // This script fetches logs every 3 seconds and updates the log container
-    function fetchLogs() {
-        fetch('/logs')
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById('logContainer');
-                container.innerHTML = '';
-                data.forEach(line => {
-                    const p = document.createElement('p');
-                    p.textContent = line;
-                    container.appendChild(p);
-                });
-            });
+  // Optional: Add some interactivity or dynamic features if needed
+  document.addEventListener('DOMContentLoaded', function() {
+    const alertList = document.getElementById('alertList');
+    if (alertList.children.length === 0) {
+      alertList.innerHTML = '<p class="no-alerts">🎉 No alerts found — your network is safe!</p>';
     }
-
-    setInterval(fetchLogs, 3000);
-    fetchLogs();
+  });
