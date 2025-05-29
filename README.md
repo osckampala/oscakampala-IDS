@@ -18,7 +18,7 @@ With a clean dashboard, customizable rules, and modular code, it’s built for *
 
 ## 📂 Project Layout
 
-<pre> ```OscaKampala_IDS/
+<pre> OscaKampala_IDS/
 │
 ├── core/
 │   ├── capture.py         # Network packet capture logic
@@ -38,7 +38,7 @@ With a clean dashboard, customizable rules, and modular code, it’s built for *
 │
 ├── main.py                # IDS main program
 ├── requirements.txt       # Dependencies
-└── README.md              # You are here 😉``` </pre>
+└── README.md              # You are here 😉 </pre>
 
 
 
