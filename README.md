@@ -122,9 +122,7 @@ Let’s secure networks — one packet at a time! 🚀🔒
 ---
 ## 🖼️ Screenshot
 
-```markdown
-![OscaKampala IDS Dashboard](../../static/screenshot.png)
-```
+![OscaKampala IDS Dashboard](dashboard/static/screenshot.png)
 
 
 
